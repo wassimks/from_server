@@ -1,0 +1,10 @@
+.quizz-proposition{
+    transition: 0.2s;
+}
+.quizz-proposition:hover{
+    box-shadow: 0px 0px 6px #f3f3f3;
+    background-color: rgb(209, 209, 209);
+    font-size: large;
+
+
+}

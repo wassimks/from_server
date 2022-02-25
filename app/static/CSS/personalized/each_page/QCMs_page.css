@@ -1,0 +1,18 @@
+.online_choice{
+    color:inherit;
+}
+.online_choice:hover{
+    color:#555588;
+    background-color: #ddffdd;
+    box-shadow: 0px 2px 6px lightgrey  inset;
+}
+
+.custemize-op{
+    color:#555588;
+    background-color: #ddffdd;
+}
+
+.custemize-op:hover{
+    color:#ddffdd;
+    background-color: #9999aa;
+}

@@ -1,0 +1,14 @@
+.stander-bg-light{background-color: #c2d7da;}
+.stander-items-bg-light{background-color: #f5f9f9;}
+.stander-secondary-items-bg-light{background-color: #d5e4e6;}
+
+.positive-btn{ background-color: #6fb9b9; }
+.positive-btn:hover{ background-color: #7fc9c9; }
+/* .positive-btn:hover{ background-color: #76bfbf; }
+ */
+.negative-btn{ background-color: #f16a69; }
+.negative-btn:hover{ background-color: #ff7a79; }
+/* .negative-btn:hover{ background-color: #f7706f; } */
+.neutre-btn{ background-color: #99bdc1; }
+.neutre-btn:hover{ background-color: #a9cdd1; }
+/* .neutre-btn:hover{ background-color: #afc4c7; } */

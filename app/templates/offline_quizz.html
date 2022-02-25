@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/CSS/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/CSS/personalized/Md/light_mood.css">
+    <link rel="stylesheet" href="/static/CSS/personalized/MyButtons.css">
+
+    <script src="https://kit.fontawesome.com/01dd9deafe.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/JS/personalized/playOffline.js"></script>
+
+    <title>profile</title>
+</head>
+<script>
+    function checkIfRight(refferer, bName){
+        var d = refferer.innerHTML
+        var b = '#'+bName.id
+        var r = Number($('#rightCount').text())
+        var w = Number($('#wrongCount').text())
+        c = $(".userChoice").text()
+        
+        if (c==d){
+            $(".userChoice").attr('style','background-color:#44dd44; color:#ffffff;')
+            r = r+1
+            $('#rightCount').text(String(r))
+        }else{
+            $(".userChoice").attr('style','background-color:#dd3333')
+            w = w+1
+            $('#wrongCount').text(String(w))
+        }
+        $(b).fadeOut(50)
+
+    }
+
+    function setYear(txt){$('#chosenyear').text(txt)}
+    function setUnit(txt){$('#chosenunit').text(txt)}
+    function setModule(txt){$('#chosemodule').text($('#module').val())}
+    function qNum(num){$('#q_num').text($('#q_num').val())}
+</script>
+
+<body>
+
+
+    <div class="col-12 full-page-height flex scientific-fnt stander-bg-light">
+        <div id="settings-selection" class="col-9 full-height" style="overflow: hidden; padding: 0vh 0.5vw 0vh 0vw;">
+            <div id="actual-setting" class=" stander-secondary-items-bg-light col-12 full-height no-display">
+                <div class="flex flex-column flex-evenly" style="opacity: 0.4; align-items: center; height:60%;">
+                    <div> Year: <span id="chosenyear"> 2eme </span> </div>
+                    <div id="showunit" class="unit" > Unit: <span id="chosenunit"> Cardio </span> </div>
+                    <div> Module: <span id="chosemodule"> Anatomie </span> </div>
+                    <div> Questions number: <span id="qNum"> 10 </span> </div>
+                </div>
+                <div class="flex flex-centerize flex-evenly flex-column stander-padding" style="height:40%;">
+                    <button class="stander-btn positive-btn no-edges" onmouseup="changeGame()"> change game </button>
+                    <a href="{{ url_for('get_quizz') }}" style="color:inherit; text-decoration: none; ">
+                        <button class="stander-btn negative-btn writing-padding no-edges"> end game </button>
+                    </a>
+                </div>
+
+            </div>
+            <div id="toUp" class=" stander-items-bg-light no-edges no-overflow col-12 full-height"
+                style="box-shadow: 0px 0px 10px grey;">
+                <div class="col-12 flex flex-column flex-centerize" style="height:60%;">
+                    <div class="col-11">
+                        <h5 style="text-shadow: 0px 0px 2px grey;"> filter questions by: </h5>
+                    </div>
+                    <div class="flex flex-evenly col-12">
+                        <div class="col-4 flex flex-centerize stander-padding">
+                            <div class="col-4">year:</div>
+                            <select class="stander-btn" style="background-color:inherit; color: #1e1e1e;" name="year"
+                                id="year">
+                                <option value="1" onmousedown="hideUnit(), setYear(txt='1ere')">1ere</option>
+                                <option value="2" onmousedown="showUnit(), setYear(txt='2eme')" selected>2eme</option>
+                                <option value="3" onmousedown="showUnit(), setYear(txt='3eme')">3eme</option>
+                            </select>
+                        </div>
+                        <div class="unit col-4 flex flex-centerize stander-padding">
+                            <div class="col-4">Unit:</div>
+                            <select class="stander-btn" style="background-color:inherit; color: #1e1e1e;" name="unit"
+                                id="unit">
+                                <option value="1" onmouseup="setUnit(txt='cardio')">cardio</option>
+                                <option value="2" onmouseup="setUnit(txt='digestif')">digestif</option>
+                                <option value="3" onmouseup="setUnit(txt='urinaire')">urinaire</option>
+                                <option value="4" onmouseup="setUnit(txt='endocrino')">endocrino</option>
+                                <option value="5" onmouseup="setUnit(txt='neuro')">neuro</option>
+                            </select>
+                        </div>
+                        <div class="col-4 flex flex-centerize stander-padding">
+                            <div class="col-4">Module:</div>
+                            <select class="stander-btn" style="background-color:inherit; color: #1e1e1e;" name="module"
+                                id="module">
+                                <option value="Anatomie" onmouseup="setModule()">Anatomie</option>
+                                <option value="Histologie" onmouseup="setModule()">Histologie</option>
+                                <option value="Physiologie" onmouseup="setModule()">Physiologie</option>
+                                <option value="Biophysique" onmouseup="setModule()">Biophysique</option>
+                                <option value="Biochimie" onmouseup="setModule()">Biochimie</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 flex flex-column flex-centerize" style="height:40%;">
+                    <div class="col-11">
+                        <h5 style="text-shadow: 0px 0px 2px grey ;"> Add some more details: </h5>
+                    </div>
+                    <div class="col-10 stander-padding flex flex-centerize">
+                        <div class="col-6"> Questions number </div> <input placeholder="10"
+                            class=" writing-padding col-6 no-edges stander-btn" style="color:#1e1e1e;" type="number"
+                            name="q_num" id="q_num" value="10" max="40" min="5" step="5">
+                    </div>
+                    <div class="col-10 stander-padding flex flex-centerize">
+                        <div class="col-6"> time / question </div> <input placeholder="120"
+                            class=" writing-padding col-6 no-edges stander-btn" style="color:#1e1e1e;" type="number"
+                            name="t" id="t" value="120" min="30" step="30">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-space" class="col-3 full-height" style=" padding-left: 0.5vw;">
+            <div id="showState" class=" col-12 flex stander-secondary-items-bg-light"
+                style=" border-end-end-radius: 30px; border-end-start-radius: 30px; transition:2s; box-shadow: 0px 2px 4px lightgrey; height:12%;">
+                <div class="col-3 flex flex-centerize">
+                    <div>
+                        <span>Right:</span>
+                        <span id="rightCount" style="margin-left:0vh 1.5vw;">0</span>
+                    </div>
+                </div>
+                <div class="col-5 flex flex-centerize"> Time: </div>
+                <div class="col-3 flex flex-centerize">
+                    <div>
+                        <span>Wrong:</span>
+                        <span id="wrongCount" style="margin-left:0vh 1.5vw;">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="" style="height:88%; padding-top: 0.5vw;">
+                <div id="validate-settings"
+                    class="stander-secondary-items-bg-light no-edges full-height col-12 flex flex-column flex-centerize"
+                    style=" position: relative; border-start-end-radius: 30px; border-start-start-radius: 30px;">
+                    <h4 class="" style="margin-bottom: 1.5rem; text-decoration: underline;"> Set up your game and </h4>
+                    <button onclick="start_game()" class="stander-btn positive-btn writing-padding no-edges"
+                        style="border: 2px solid #e1e1e1;"> let start </button>
+                    <a href="{{ url_for('get_quizz') }}" style="color:inherit; text-decoration: none; ">
+                        <button class="stander-btn neutre-btn small-padding no-edges"
+                            style="font-size:small; margin-top: 3vh; opacity: 0.7;">
+                            cancel
+                        </button>
+                    </a>
+                </div>
+
+                <div id="showGameQ"
+                    class="stander-items-bg-light full-height col-12 flex flex-column flex-centerize no-display"
+                    style=" border-start-end-radius: 30px; border-start-start-radius: 30px;">
+                    <div style="height: 10%;" class="col-12 stander-padding text-centerize">
+                        <h3 style="color: #fbfbfb; text-shadow: 0px 0px 2px lightgrey; font-family: cursive;"> <u> Quizz
+                                Game </u> </h3>
+                    </div>
+                    <div id="questions_fix_container" class="no-overflow" style="height: 90%; position:relative;">
+                        <div id="questions_drawable_container" class="col-12 flex full-height"
+                            style=" position: absolute; overflow-x:visible">
+
+                            <!-- hna tebda part li twerilek qcms and those stuffs -->
+                            <div class="col-12 full-height" style="float: left;">
+                                <div class="flex flex-centerize col-12" style="height: 20%;">
+                                    Question: -----
+                                </div>
+                                <div class="col-12 flex flex-centerize" style="height: 60%;">
+                                    <div class="col-6 flex flex-centerize">
+                                        <ol style="list-style: upper-alpha; list-style-position: inside;">
+                                            <li class=" proposition stander-margin stander-padding no-edges">Proposition 1</li>
+                                            <li class=" proposition stander-margin stander-padding no-edges">Proposition 2</li>
+                                            <li class=" proposition stander-margin stander-padding no-edges">Proposition 3</li>
+                                            <li class=" proposition stander-margin stander-padding no-edges">Proposition 4</li>
+                                            <li class=" proposition stander-margin stander-padding no-edges">Proposition 5</li>
+                                        </ol>
+                                    </div>
+                                    <div id="r_answers" class="" style=" opacity: 0.2; position: absolute; top:0; right:4rem;">Proposition 3</div>
+                                </div>
+                                <div class="col-12 flex flex-centerize" style=" height: 20%;">
+                                    <div class="col-12">
+                                        <button onclick="next_q()" class="writing-padding no-edges"
+                                        style="float: right; margin-right: 4rem;"> Next
+                                    </button>
+                                    <!-- <button onclick="" class="writing-padding no-edges"
+                                        style="float: right; margin-right: 4rem;"> Validate
+                                    </button> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 full-height" style="float: left;">
+                                <div class="flex flex-centerize col-12" style="height: 20%;">
+                                </div>
+                                <div class="col-12 flex flex-centerize" style="height: 60%;">
+                                    Done
+                                </div>
+                                <div class="col-12 flex flex-centerize" style=" height: 20%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 full-height flex flex-centerize">
+
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+<script>
+
+    function hideUnit(){ $('.unit').fadeOut() }
+    function showUnit(){ $('.unit').fadeIn() }
+
+</script>
+
+</html>

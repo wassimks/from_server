@@ -1,0 +1,12 @@
+.smoth-inp{
+    outline-width: 0ch;
+    border: 1px solid lightgrey ;
+}
+
+.selected_as_right{
+    opacity: 1;
+}
+
+.selected_as_wrong{
+    opacity: 0.3;
+}

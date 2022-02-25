@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/CSS/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/CSS/personalized/Md/light_mood.css">
+    <link rel="stylesheet" href="/static/CSS/personalized/Md/light_mood.css">
+
+    <script src="https://kit.fontawesome.com/01dd9deafe.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>profile</title>
+</head>
+
+<body>
+    <div class="scientific-fnt col-12 full-page-height stander-bg-light">
+        <div class="col-12 flex stander-padding stander-items-bg-light"
+            style="height: 13%; box-shadow: 0px 1px 4px grey; position: relative; z-index: 5;">
+            <div class="col-3 flex" style="align-items: center;">
+                Logo
+            </div>
+            <div class="col-6 flex flex-evenly flex-centerize" style="padding:0vh 3vw;">
+                <div> <a href="{{ url_for('get_first') }}" style="color:inherit; text-decoration: none;"> home </a>
+                </div>
+                <div>journal</div>
+                <div>flash cards</div>
+                <div>resum</div>
+            </div>
+            <div class="col-3 flex flex-evenly flex-centerize" style="padding:0vh 3vw;">
+                <div>Points</div>
+                <div>Notifications</div>
+                <div>Profile</div>
+            </div>
+        </div>
+
+        <div class="col-12" style="overflow: auto; height: 87%;">
+            <div class="stander-items-bg-light small-margin stander-padding grid" style="grid-template-rows: 10% 70% 10% ; width: 32.25%; float: left; min-height: 200px;">
+                <div class="">
+                    <div style="float: left;" class=" flex flex-centerize writing-padding col-2"> <img style="border-radius: 90px; height: 2rem; width: 2rem;"
+                            src="/static/IMG/profile pics/steto.jpeg" alt=""> </div>
+                    <div style="float: left;" class=" writing-padding col-10 flex" style="align-items: center;"> Username </div>
+                </div>
+                <div class=" flex-centerize stander-padding" style="">
+                    <div style="float: left;" class="col-4 flex flex-centerize"> Year: </div>
+                    <div style="float: left;" class="col-4 flex flex-centerize"> Unit: </div>
+                    <div style="float: left;" class="col-4 flex flex-centerize"> Module: </div>
+                </div>
+                <div class="">
+                    <div style="float: left;" class="col-6"> played by: </div>
+                    <div style="float: left;" class="col-6"> pourcentage de reusite: </div>
+                </div>
+            </div>
+            <div class="stander-items-bg-light small-margin" style="width: 32.25%; float: left; min-height: 200px;">
+            </div>
+            <div class="stander-items-bg-light small-margin" style="width: 32.25%; float: left; min-height: 200px;">
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+<script>
+
+</script>
+
+</html>

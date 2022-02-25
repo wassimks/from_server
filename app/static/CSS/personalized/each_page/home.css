@@ -1,0 +1,13 @@
+.field{
+    padding:0vh 0.75vw;
+}
+
+.field:hover{
+    background-color: #318d97;
+    color:#e1e1e1;
+}
+
+.selected-field{
+    background-color: #318d97;
+    color:#f1f1f1;    
+}

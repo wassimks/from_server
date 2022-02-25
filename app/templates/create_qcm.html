@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/CSS/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/CSS/personalized/Md/light_mood.css">
+    <link rel="stylesheet" href="/static/CSS/personalized/each_page/QCMs_page.css">
+    <link rel="stylesheet" href="/static/CSS/personalized/each_page/create_qcm.css">
+    <link rel="stylesheet" href="/static/CSS/personalized/MyButtons.css">
+
+    <script src="https://kit.fontawesome.com/01dd9deafe.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>profile</title>
+</head>
+
+<body>
+
+
+
+    <div class="scientific-fnt full-page-height col-12 stander-bg-light">
+        <div class="col-12 flex flex-evenly" style="height: 25%; font-size: larger;">
+            <div class="col-3 flex flex-centerize">
+                <span> Year: </span>
+                <select class="stander-btn no-edges stander-items-bg-light writing-padding" style=" color:#1e1e1e; font-weight:400;"
+                    name="year" id="year">
+                    <option value="1">1st year</option>
+                    <option value="2">2nd year</option>
+                    <option value="3">3rd year</option>
+                </select>
+            </div>
+            <div class="col-3 flex flex-centerize">
+                <span> Unit: </span>
+                <select class="stander-btn no-edges stander-items-bg-light writing-padding" style=" color:#1e1e1e; font-weight:400;"
+                    name="unit" id="unit">
+                    <option value="2">System cardio-respiratoire</option>
+                    <option value="1">System digestif</option>
+                    <option value="3">Appareil urinaire</option>
+                    <option value="3">Appareil endocrinnienne</option>
+                    <option value="3">System neuro-sensoriel</option>
+                </select>
+            </div>
+            <div class="col-3 flex flex-centerize">
+                <span> Module: </span>
+                <select class="stander-btn no-edges stander-items-bg-light writing-padding" style=" color:#1e1e1e; font-weight:400;"
+                    name="module" id="module">
+                    <option value="Anatomie">Anatomie</option>
+                    <option value="Histologie">Histologie</option>
+                    <option value="Physiologie">Physiologie</option>
+                    <option value="Biochimie">Biochimie</option>
+                    <option value="Biophysique">Biophysique</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="col-12 flex flex-centerize" style="font-size: large; height: 20%;">
+            <div class="col-8 flex flex-centerize">
+                <input class=" stander-btn col-12 writing-padding no-edges text-centerize" style="color:#1e1e1e;"
+                    placeholder="Question ..." type="text" name="Question" id="Question">
+            </div>
+        </div>
+
+        <div class="col-12 flex flex-centerize" style="font-size: large; height: 35%;">
+            <div class="col-6 full-height">
+                <ol class="col-12 full-height flex flex-column flex-centerize"
+                    style=" justify-content: space-evenly; list-style-type: upper-alpha;">
+                    <li>
+                        <input class=" stander-btn smooth-inp writing-padding no-edges" style="color:#1e1e1e; float: left;" placeholder="Proposition 1 ..."
+                            type="text" name="prop_1" id="prop_1">
+                        <label for="answer_A" id="r_answer_A" class="selected_as_right flex flex-centerize full-height writing-padding no-edges"
+                            style=" float: left; opacity: 0.3; margin-left: 1vw; background-color: lightgreen;"><i class="fa fa-check"></i></label>
+                        <input class="prop_1 stander-btn " type="checkbox" hidden name="answer_A" id="answer_A">
+                    </li>
+                    <li>
+                        <input class=" stander-btn  smooth-inp writing-padding no-edges" style="color:#1e1e1e; float: left;" placeholder="Proposition 2 ..."
+                            type="text" name="prop_2" id="prop_2">
+                        <label for="answer_B" id="r_answer_B" class="selected_as_right flex flex-centerize full-height writing-padding no-edges"
+                            style=" float: left; opacity: 0.3; margin-left: 1vw; background-color: lightgreen;"><i class="fa fa-check"></i></label>
+                        <input class="prop_2 stander-btn " type="checkbox" hidden name="answer_B" id="answer_B">
+                    </li>
+                    <li>
+                        <input class=" stander-btn  smooth-inp writing-padding no-edges" style="color:#1e1e1e; float: left;" placeholder="Proposition 3 ..."
+                            type="text" name="prop_3" id="prop_3">
+                        <label for="answer_C" id="r_answer_C" class="selected_as_right flex flex-centerize full-height writing-padding no-edges"
+                            style=" float: left; opacity: 0.3; margin-left: 1vw; background-color: lightgreen;"><i class="fa fa-check"></i></label>
+                        <input class="prop_3 stander-btn " type="checkbox" hidden name="answer_C" id="answer_C">
+                    </li>
+                    <li>
+                        <input class=" stander-btn  smooth-inp writing-padding no-edges" style="color:#1e1e1e; float: left;" placeholder="Proposition 4 ..."
+                            type="text" name="prop_4" id="prop_4">
+                        <label for="answer_D" id="r_answer_D" class="selected_as_right flex flex-centerize full-height writing-padding no-edges"
+                            style=" float: left; opacity: 0.3; margin-left: 1vw; background-color: lightgreen;"><i class="fa fa-check"></i></label>
+                        <input class="prop_4 stander-btn " type="checkbox" hidden name="answer_D" id="answer_D">
+                    </li>
+                    <li>
+                        <input class=" stander-btn  smooth-inp writing-padding no-edges" style="color:#1e1e1e; float: left;" placeholder="Proposition 5 ..."
+                            type="text" name="prop_5" id="prop_5">
+                        <label for="answer_E" id="r_answer_E" class="selected_as_right flex flex-centerize full-height writing-padding no-edges"
+                            style=" float: left; opacity: 0.3; margin-left: 1vw; background-color: lightgreen;"><i class="fa fa-check"></i></label>
+                        <input class="prop_5 stander-btn " type="checkbox" hidden name="answer_E" id="answer_E">
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="col-12 flex flex-centerize" style=" height: 20%;">
+            <div class="col-9">
+
+            </div>
+            <div class="col-3 flex flex-evenly">
+                <button onclick="add_question()" class="stander-btn neutre-btn no-edges" style="padding:0.25vh 1vw;">
+                    done
+                </button>
+                <button class="stander-btn positive-btn no-edges" style="padding:0.25vh 1vw;">
+                    create next >
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <a href="{{url_for('get_quizz')}}" class="stander-padding flex flex-centerize"
+        style=" text-decoration: none; font-weight: 900; color:white; background-color: #cc1111;position:absolute; top:0; right:0;">
+        X
+    </a>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+<script>
+
+    $(document).ready(function(){
+        $('.selected_as_right').mouseup(function(){
+            var opac = $(this).css('opacity')
+            
+            if (opac=='0.3'){
+                $(this).css('opacity','1')
+            }else{
+                $(this).css('opacity','0.3')
+            }
+        })
+    })
+
+
+    function add_question(){
+
+        if( $('#Question').val()=='' || $('#prop_1').val()=='' || $('#prop_2').val()=='' || $('#prop_3').val()=='' || $('#prop_4').val()=='' || $('#prop_5').val()==''){
+            alert(' question and proposition space should be filled before submiting question ')
+        }
+        else{
+            p1=window.btoa($('#prop_1').val())
+            p2=window.btoa($('#prop_2').val())
+            p3=window.btoa($('#prop_3').val())
+            p4=window.btoa($('#prop_4').val())
+            p5=window.btoa($('#prop_5').val())
+
+            var ids = new Array()
+            $('input[type=checkbox]:checked').each(function(){
+                ids[ Number(ids.length) ]= $(this).attr('class').split(' ')[0]
+            })
+
+            c_a=''
+            ids.forEach(function(value, index, Array){
+                var cls = '#'+value
+                c_a=c_a+$('#'+value).val()+'ks_sp'
+            })
+
+            all = {
+                'question':$('#Question').val(),
+                'prop':p1+'ks_sp'+p2+'ks_sp'+p3+'ks_sp'+p4+'ks_sp'+p5,
+                'r_prop':window.btoa(c_a),
+                'year':$('#year').val(),
+                'unit':$('#unit').val(),
+                'module':$('#module').val()
+            }
+
+            fetch("/challenge/createqcm", {
+                method:'POST',
+                body: JSON.stringify(all),
+                headers: {
+                    'content-type':'application/json'
+                },
+            }).then(function(response){
+                alert('done')
+                })
+        }
+
+    }
+
+</script>
+
+</html>

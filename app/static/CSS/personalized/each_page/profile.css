@@ -1,0 +1,11 @@
+.main_choice{
+    box-shadow: 0px 0px 2px grey;
+    height:98%;
+    transition: 0.2s;
+    background-color: #f5f9f9;
+}
+.main_choice:hover{
+    box-shadow: 0px 0px 4px lightgrey;
+    background-color: #f5f9f9;
+    transition:0.2s;
+}

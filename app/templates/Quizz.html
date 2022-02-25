@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/CSS/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/CSS/personalized/Md/light_mood.css">
+    <link rel="stylesheet" href="/static/CSS/personalized/each_page/QCMs_page.css">
+
+    <script src="https://kit.fontawesome.com/01dd9deafe.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>profile</title>
+</head>
+
+<body>
+
+    <div class="full-page-height col-12 scientific-fnt">
+        <div class="full-height grid col-12" style="grid-template-rows: 11% 89%;">
+            <div class="col-12 flex stander-padding">
+                <div class="col-3 flex" style="align-items: center;">
+                    Logo
+                </div>
+                <div class="col-6 flex flex-evenly flex-centerize" style="padding:0vh 3vw;">
+                    <div> <a href="{{ url_for('get_first') }}" style="color:inherit; text-decoration: none;"> home </a>
+                    </div>
+                    <div>journal</div>
+                    <div>flash cards</div>
+                    <div>resum</div>
+                </div>
+                <div class="col-3 flex flex-evenly flex-centerize" style="padding:0vh 3vw;">
+                    <div>Points</div>
+                    <div>Notifications</div>
+                    <div>Profile</div>
+                </div>
+            </div>
+            <div class="grid flex-column col-12 full-height" style="font-size: larger; grid-template-rows: 50% 50%;">
+                <div class="col-12 flex scientific-fnt stander-bg-light">
+                    <div class="col-6 full-height flex flex-centerize">
+                        <a href="{{ url_for('get_offline_quizz') }}" class=" flex flex-centerize stander-items-bg-light"
+                            style="height: 98%; width: 98.5%; text-decoration: none; color:inherit;">
+                            Offline
+                        </a>
+                    </div>
+                    <div class="col-6 full-height flex flex-centerize">
+                        <div id="online" class=" flex flex-centerize flex-column stander-items-bg-light"
+                            style="position:relative; overflow: hidden; height: 98%; width: 98.5%; ">
+
+
+                            <div id="online_desc" class=" col-12 flex flex-centerize"
+                                style="position:absolute; top: 0%; height: 100%;"> Online </div>
+
+                            <div id="online_op" class=" col-12 flex no-overflow"
+                                style="position:absolute; bottom:0px; left:0px; height: 0%; box-shadow: 0px 2px 6px lightgrey  inset;">
+                                <a href="{{ url_for('get_open_challenges') }}" style="text-decoration:none;"
+                                    class="online_choice col-6 flex flex-centerize">
+                                    <div class=""> open challenge </div>
+                                </a>
+                                <a id="select-friend-for-challenge" href="#" style="text-decoration:none;"
+                                    class="online_choice col-6 flex flex-centerize">
+                                    <div class=""> with a friend </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 flex flex-centerize stander-bg-light">
+                    <div id="custemize-container" class="flex flex-centerize stander-items-bg-light"
+                        style="height: 97%; width: 99%; ">
+                        <a href="{{ url_for('get_create_qcm') }}"
+                            class="flex flex-centerize no-width no-overflow custemize-op full-height"
+                            style="text-decoration: none; color: inherit; position:relative; left: 0;"> Create QCMs </a>
+                        <div id="custemize" class="col-2 flex flex-centerize full-height"> Custemized game</div>
+                        <a href="{{ url_for('get_create_challenge') }}" class="flex flex-centerize no-width no-overflow custemize-op full-height"
+                            style="position:relative; right: 0; text-decoration: none; color:inherit;"> Create challenge </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- pages that will be relative to nothing except the full page -->
+    <div id="friend-for-challenge" class=" col-12 full-page-height no-display"
+        style="position: absolute; top:0; left:0;">
+        <div style="background-color: rgba(0,0,0,0.9);" class="flex flex-centerize full-page-height col-12">
+            <div class="col-7 no-edges stander-padding flex flex-column"
+                style="background-color: #efefef; height: 50%;">
+                <div class="flex flex-centerize" style="height: 10%;">
+                    <div class=" small-padding " style="height: 4vh">
+                        <img style="height:100%; width:100%;" src="/static/IMG/icons/search.png" alt="">
+                    </div>
+                    <div class="col-8" style="height: 100%;">
+                        <input class="col-12" style="padding: 0.25vh 1vw;" type="search" name="" id=""
+                            placeholder="try to find your friend from here..">
+                    </div>
+                    <div class="writing-padding flex flex-centerize" style="height:100%;">
+                        <button class="no-edges" style="padding: 0.25vh 0.5vw;"> invite </button>
+                    </div>
+                </div>
+                <div class="col-12 flex flex-centerize" style="height:75%;">
+                    no user selected yet
+                </div>
+                <div class="col-12" style="height:15%;">
+                    <button onclick="cancelFChosing()" class=" small-margin no-edges flex flex-centerize"
+                        style="padding: 0.25vh 0.5vw; float: left; height: 4vh;"> cancel </button>
+                    <button class=" small-margin no-edges flex flex-centerize" style="float: right; height: 4vh;"> <a
+                            href="{{url_for('get_onevone_p')}}" class="col-12 flex flex-centerize"
+                            style="padding: 0.25vh 0.5vw; text-decoration: none; color:inherit; height: 100%;"> done
+                        </a></button>
+                    <button class=" small-margin no-edges flex flex-centerize"
+                        style="padding: 0.25vh 0.5vw; float: right; height: 4vh;"> share <img
+                            style=" padding: 0.25vh 0.5vw; height:100%; width:100%;" src="/static/IMG/icons/share.png"
+                            alt=""> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+<script>
+
+    $(document).ready(function () {
+        $("#online").on({
+            mouseenter: function () {
+                $('#online_op').delay(100).animate({ height: "60%" })
+                $('#online_desc').delay(100).animate({ height: "40%" })
+            },
+            mouseleave: function () {
+                $('#online_op').animate({ height: "0%" })
+                $('#online_desc').animate({ height: "100%" })
+            }
+        })
+
+        $('#select-friend-for-challenge').mousedown(function () {
+            $('#friend-for-challenge').fadeIn()
+        })
+
+        $('#custemize-container').on({
+            mouseenter: function () {
+                $(".custemize-op").delay(100).animate({ width: "41.66%" })
+                $('#custemize').css('box-shadow', '0px 0px 10px grey inset')
+            },
+            mouseleave: function () {
+                $(".custemize-op").animate({ width: "0%" })
+                $('#custemize').css('box-shadow', '0px 0px 0px grey inset')
+            },
+        })
+
+    })
+
+    function cancelFChosing() {
+        $('#friend-for-challenge').fadeOut()
+    }
+
+</script>
+
+</html>

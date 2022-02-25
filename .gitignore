@@ -1,0 +1,7 @@
+ReadMe.txt
+
+__pycache__/
+
+*.pyc
+
+app/static/IMG/medicalColors/

@@ -1,0 +1,12 @@
+.stander-btn{
+    border-width:0px;
+    box-shadow: 0px 0px 4px lightgrey;
+    border-radius: 10px;
+    padding:6px 14px ;
+    color: #fafcfc;
+    font-weight:600;
+}
+.stander-btn:hover{
+    box-shadow: 0px 0px 2px #e1e1e1 inset;
+    color: #ffffff;
+}

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/CSS/main.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/CSS/personalized/Md/light_mood.css">
+    <link rel="stylesheet" href="/static/CSS/personalized/each_page/profile.css">
+
+    <script src="https://kit.fontawesome.com/01dd9deafe.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/JS/personalized/profile.js" crossorigin="anonymous"></script>
+
+    <title>profile</title>
+</head>
+
+<body>
+    <div class="col-12 full-page-height flex flex-column stander-bg-light scientific-fnt">
+        <div id="full-navbar" class="col-12 stander-items-bg-light stander-padding"
+            style="background-image:linear-gradient(white, transparent);height:16vh;">
+            <div class="col-12" style="height:4.8vh;">
+                <div class="col-12 flex flex-between full-height">
+                    <div class="col-2 flex flex-centerize" style="justify-content: flex-start;">
+                        <div class="col-3"> <a style="color: inherit;" href="{{ url_for('get_first') }}"> <i
+                                    class="fas fa-home"></a></i>
+                        </div>
+                        <div class="col-3"><i class="fas fa-list-alt"></i></div>
+                    </div>
+                    <div class="col-3 flex flex-centerize" style="justify-content: flex-end;">
+                        <div class="col-3 flex">
+                            <div>points</div>
+                        </div>
+                        <div class="col-4 flex">
+                            <div class="col-4"><i class="far fa-paper-plane"></i></div>
+                            <div class="col-4"><i class="far fa-bell"></i></div>
+                            <div class="col-4"><i class="fas fa-user-cog"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="full_user_details" class="no-overflow col-12 flex flex-centerize" style="height:70%;">
+                <div class="col-3 flex flex-evenly full-height">
+                    <div class="col-5 flex flex-centerize" style="height: 3.5rem; width:3.5rem; border-radius: 90rem;">
+                        <img style="height:100%; width: 100%; border-radius: 90rem; box-shadow: 0px 0px 4px #beb07e;"
+                            src="/static/Default/default_user/Airplane-bg.jpeg" alt="user_photo">
+                    </div>
+                    <div class="col-6 flex flex-column flex-centerize">
+                        <div style="font-size: larger;">{{current_user.username}}</div>
+                        <div class="flex">
+                            <div
+                                style="height:0.5rem; width:0.5rem; border-radius: 90px; background-color: aqua; margin-left: 0.15rem;">
+                            </div>
+                            <div
+                                style="height:0.5rem; width:0.5rem; border-radius: 90px; background-color: aqua; margin-left: 0.15rem;">
+                            </div>
+                            <div
+                                style="height:0.5rem; width:0.5rem; border-radius: 90px; background-color: aqua; margin-left: 0.15rem;">
+                            </div>
+                            <div
+                                style="height:0.5rem; width:0.5rem; border-radius: 90px; background-color: aqua; margin-left: 0.15rem;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-content" class="col-12 flex full-height" style="height:84vh;">
+            <div class="no-overflow col-9 flex main-page-content">
+                <div id="MyFlashCardsContainer"
+                    class="no-overflow col-6 full-height flex flex-centerize stander-padding" style="padding-right: 0.5vw;">
+                    <div id="MyFlashCards"
+                        class="main_choice col-12 full-height no-edges no-overflow flex flex-centerize ">
+                        <div id="MyFlashCardOver" class="" style="">
+                            My Flash cards
+                        </div>
+                        <div id="MyFlashCardDetails" class="col-12 no-display stander-padding">
+                            <div class="flex flex-column full-height">
+                                <div class="col-12 flex flex-centerize" style="position: relative; height:8%;">
+                                    <h3 style="font-family: cursive;"> My Flash Cards </h3>
+                                    <div id="initialate_page" class="stander-padding"
+                                        style=" position:absolute; top:0%; right:0; height:100%;">
+                                        Back
+                                    </div>
+                                </div>
+                                <div class="col-12 flex flex-evenly" style="height: 87%;">
+                                    <div class="col-3 full-height flex flex-evenly no-overflow flex-column">
+                                        <div class="flex flex-centerize "
+                                            style="background-color: #6c86c3; border-radius: 1.5rem; height:7.5rem; width:12rem; max-width: 98%;">
+                                            module 1
+                                        </div>
+                                        <div class="flex flex-centerize "
+                                            style="background-color: #f28b8f; border-radius: 1.5rem; height:7.5rem; width:12rem; max-width: 98%;">
+                                            module 2
+                                        </div>
+                                        <div class="flex flex-centerize "
+                                            style="background-color: #fedfb0; border-radius: 1.5rem; height:7.5rem; width:12rem; max-width: 98%;">
+                                            module 3
+                                        </div>
+                                        <div class="flex flex-centerize "
+                                            style=" font-size: xx-large; background-color: rgba(100,100,200, 0.2); border-radius: 1.5rem; height:7.5rem; width:12rem; max-width: 98%;">
+                                            <i class="fa fa-plus" style="opacity: 0.8;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-8 flex flex-centerize">
+                                        <div style="opacity: 0.5;"> select a card to start playing.. </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="to_myquizzesContainer" class="col-6 full-height flex flex-centerize stander-padding " style="padding-left: 0.5vw;">
+                    <div id="to_myquizzes"
+                        class="main_choice col-12 full-height no-edges stander-items-bg-light flex flex-centerize ">
+                        <div id="to_myquizzDesc" class=" flex flex-centerize col-12 full-height">My quizzes</div>
+                        <div id="to_myquizzContent"
+                            class=" stander-padding flex flex-centerize col-12 full-height no-display"
+                            style="position: relative;">
+                            <div class=" full-height flex flex-evenly flex-column col-4">
+                                <div>Module 1</div>
+                                <div>Module 2</div>
+                                <div>Module 3</div>
+                                <div>Module 4</div>
+                            </div>
+                            <div class="col-8">
+
+                            </div>
+                            <div id="to_myqizzBack" class="flex flex-centerize stander-padding"
+                                style="position:absolute; top:0; right:0;">
+                                back
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 stander-items-bg-light" style="border-top: 1px solid #f4f2f2;">
+                <div class="col-12 full-height flex flex-column flex-between stander-padding">
+                    <div id="fl" style="height:5rem;" class="col-11 flex flex-evenly">
+                        <div class="flex flex-column flex-evenly">
+                            <div>Followers</div>
+                            <div> ... </div>
+                        </div>
+                        <div class="flex flex-column flex-evenly">
+                            <div>Following</div>
+                            <div> ... </div>
+                        </div>
+                        <div class="flex flex-centerize">
+                            <div style="height:2rem; width:2rem; border-radius:90px;">
+                                <img style="height:100%; width:100%; border-radius:90px; box-shadow: 0px 0px 4px yellow;"
+                                    src="/static/Default/page_stander/rank/Gold Rank.png" alt="rank">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height:28rem;"
+                        class="col-12 flex flex-column flex-between stander-padding stander-margin">
+                        <div id="" class="no-overflow col-11 stander-margin">
+                            <legend> bio </legend>
+                            <div class="flex flex-centerize" style="color:rgba(128,128,128, 0.6);">
+                                add a bio..
+                            </div>
+                        </div>
+                        <div class="col-11 stander-margin flex flex-centerize stander-items-bg-light"
+                            style="height:3rem; border-radius:20px; box-shadow: 0px 0px 4px grey;">
+                            My promo News
+                        </div>
+                        <div class="col-11 stander-margin flex flex-centerize stander-items-bg-light"
+                            style="height:3rem; border-radius:20px; box-shadow: 0px 0px 4px grey;">
+                            My posts
+                        </div>
+                        <div class="col-11 stander-margin flex flex-centerize stander-items-bg-light"
+                            style="height:3rem; border-radius:20px; box-shadow: 0px 0px 4px grey;">
+                            Schedual
+                        </div>
+                        <div class="col-11 stander-margin flex flex-centerize stander-items-bg-light"
+                            style="height:3rem; border-radius:20px; box-shadow: 0px 0px 4px grey;">
+                            My promo News
+                        </div>
+                        <div id=""
+                            class="no-overflow no-height col-11 stander-margin flex flex-centerize stander-items-bg-light"
+                            style=" border-radius:20px; box-shadow: 0px 0px 4px grey;">
+                            Back
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+<script>
+
+</script>
+
+</html>
